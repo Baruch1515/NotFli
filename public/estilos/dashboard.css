@@ -1,0 +1,185 @@
+/* Estilos para el contenedor principal */
+.contenedor {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 20px;
+}
+
+/* Estilos para el menú de la izquierda */
+.menu-izquierda {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 200px;
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-izquierda ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-izquierda li {
+	margin-bottom: 10px;
+}
+
+.menu-izquierda a {
+	text-decoration: none;
+	color: #333;
+}
+
+.menu-izquierda a:hover {
+	color: #000;
+}
+
+/* Estilospara la sección central */
+.seccion-central {
+flex: 1;
+margin-left: 220px;
+margin-right: 300px;
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.seccion-central form {
+margin-bottom: 20px;
+}
+
+.seccion-central textarea {
+width: 100%;
+height: 100px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: none;
+}
+
+.seccion-central button {
+background-color: #007bff;
+color: #fff;
+border: none;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.seccion-central button:hover {
+background-color: #0069d9;
+}
+
+/* Estilos para las publicaciones */
+.publicacion {
+background-color: #fff;
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.publicacion h3 {
+margin-top: 0;
+}
+
+.publicacion p {
+margin-bottom: 0;
+}
+
+/* Estilos para la lista de tendencias */
+.tendencias {
+position: fixed;
+top: 20px;
+right: 20px;
+width: 200px;
+background-color: #fff;
+padding: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.tendencias ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.tendencias li {
+margin-bottom: 10px;
+}
+
+.tendencias li:hover {
+color: #007bff;
+cursor: pointer;
+}
+.publicacion-card {
+	background-color: #ffffff;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+  }
+  
+  .publicacion-card .publicacion-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+  }
+  
+  .publicacion-card .publicacion-info h3 {
+	margin: 0;
+	margin-right: 10px;
+  }
+  
+  .publicacion-card .fecha-publicacion {
+	font-size: 14px;
+	color: #999;
+	margin: 0;
+  }
+  
+  .publicacion-card .publicacion-contenido {
+	margin-bottom: 10px;
+  }
+  
+  .publicacion-card .publicacion-acciones button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+  }
+  
+  .publicacion-card .publicacion-acciones button:hover {
+	background-color: #0069d9;
+  }
+  .publicacion-acciones {
+	display: flex;
+	justify-content: flex-end;
+  }
+  
+  .botones-acciones {
+	display: flex;
+	align-items: center;
+  }
+  
+  .botones-acciones form {
+	margin-right: 10px;
+  }
+  
+  .botones-acciones button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 50px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+  }
+  
+  .botones-acciones button:hover {
+	background-color: #0069d9;
+  }
+	
