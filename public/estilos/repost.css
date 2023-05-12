@@ -1,0 +1,50 @@
+
+.code-editor {
+    max-width: 500px;
+    background-color: #000000;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 50px;
+    width: 50%; /* Establece el ancho del elemento div */
+    height: 200px; /* Establece la altura del elemento div */
+    margin: 0 auto; 
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  .code{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .titlec {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 1.57px;
+    color: rgb(212 212 212);
+  }
+  
+  .icon {
+    width: 20px;
+    transition: .2s ease;
+  }
+  
+  .icon:hover {
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #6e7281;
+  }
+  
+  .editor-content {
+    margin: 0 10px 10px;
+    color: white;
+  }
+  #repost{
+    margin-left: 10px;
+  }
+  

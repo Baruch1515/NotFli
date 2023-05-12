@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NotaController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\InicioController;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -25,18 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-$notes = Nota::withCount('likes')
-            ->orderByDesc('likes_count')
-            ->take(5)
-            ->get();
-
- 
-    $notas = Nota::orderBy('created_at', 'desc')->get();
-    $user = Auth::user();
-    return view('dashboard', compact('notas','notes','user'));
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/dashboard', [InicioController::class, 'index'])->name('dashboard');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -45,7 +36,7 @@ Route::middleware('auth')->group(function () {
     //APP DE NOTAS
     Route::post('/guardar-nota', [NotaController::class, 'store'])->name('guardar.nota');
 
-    Route::post('/likes', [LikeController::class, 'store'])->name('likes.store');
+    Route::post('/likes}', [LikeController::class, 'store'])->name('likes.store');
 
     Route::get('/users/{user}', [ProfileController::class, 'show'])->name('perfil.show');
 
@@ -56,6 +47,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/trending', [NotaController::class, 'trending'])->name('trending');
     Route::delete('likes/{nota}', [LikeController::class, 'destroy'])->name('likes.destroy');
 
+  
+
+    Route::get('/hashtag/{tag}', [NotaController::class, 'notasPorHashtag'])->name('notas.hashtag');
+
+    Route::get('/repost/{nota}', [NotaController::class, 'repost'])->name('repost.show');
 });
 
 
