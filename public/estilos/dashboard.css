@@ -20,73 +20,6 @@
 	margin: 0px;
   }
   
-  /* header styles */
-  .head-tools{
-	padding: 10px;
-	padding-top: 2px;
-	text-align: right;
-	font-size: var(--head);
-	color: var(--tool);
-	vertical-align: middle;
-	line-height: var(--head);
-	padding-bottom: 10px;
-  }
-  
-  
-  .tool{
-	padding-right: 15px;
-  }
-  
-  .tool:hover{
-	color: var(--tool);  
-  }
-  
-  
-  .search{
-	font-size: 0.5em;
-	width: 150px;
-	height: var(--head);
-	margin: 0;
-	margin-right: 15px;
-	background: none;
-	color: var(--tool);
-	border: 2px solid var(--tool-inactive);
-	border-radius: 30px;
-	padding: 2px 10px 2px 10px;
-	margin-right: 50px;
-  }
-
-  .search:focus{
-	border: 2px solid var(--tool);
-  }
-  
-  .inactive{
-	color: var(--tool-inactive);
-  }
-  
-  .title{
-	margin-right: 10px;
-	position: absolute;
-	top: 5px;
-	left: 15px;
-	font-size: var(--head);
-	color: var(--tool);
-	font-weight: 800;
-  }
-  
-  hr {
-	display: block;
-	border: 0;
-	border-top: 2px solid var(--tumblr-offset);
-	margin: 0;
-	padding: 0;
-  }
-  
-  .seenBy {
-	text-align: left;
-  }
-  
-  /* post styles */
   .posts{
 	text-align: center;
   }
@@ -259,7 +192,23 @@
 	font-size: 22px;
 	margin-right: 30px;
   }
-#repost{
+  #repost{
+	margin-left: 15px;
+	text-decoration: none;
+}#delete{
 	margin-left: 15px;
 	text-decoration: none;
 }
+.imagen-container {
+	max-width: 100%;
+	height: auto;
+  }
+  .imagen-container img {
+	width: 100%;
+	height: auto;
+	object-fit: cover; /* Esto asegurará que la imagen se ajuste sin deformarse */
+  }
+  .imagen-container img {
+	min-width: 200px; /* Tamaño mínimo deseado */
+	min-height: 200px;
+  }

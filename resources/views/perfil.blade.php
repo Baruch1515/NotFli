@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script src="https://kit.fontawesome.com/0c07597779.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ asset('estilos/dashboard.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('estilos/perfil.css') }}">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>Perfil de {{ $user->name }}</h1>
 
-<div>{{ $user->followersCount() }} seguidores</div>
+    @include('header')
 
-<br>
-
-@if (auth()->user()->following($user))
-    <form action="{{ route('unfollow', $user) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button class="btn btn-primary">Dejar de seguir</button>
-    </form>
-@else
-<form action="{{ route('follow', $user) }}" method="POST">
-    @csrf
-    <button class="btn btn-primary">Seguir</button>
-</form>
-@endif
+    <main>
+        <section class="profile">
+            <figure class="profile-photo">
+                <img src="{{ asset($user->imagen) }}" alt="Imagen de perfil">
 
 
+
+            </figure>
+            <div class="profile-details">
+                <h2>{{ $user->name }}</h2>
+                <p style="color:white;">Segidores: {{ $user->followersCount() }}</p>
+                <p style="color:white;">Pais: {{$user->pais}}</p>
+                <p style="color:white;">Orientacion: {{$user->orientacion}}</p>
+                </p>
+                <div class="buttons-container">
+                    @if($isOwner)
+                    <a role="button" class="button-name" href="{{ route('perfil.edit', ['id' => $user->id]) }}">Editar Perfil</a>
+
+                    @endif
+
+
+                    @if (auth()->user()->following($user))
+                    <form action="{{ route('unfollow', $user) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="unfollow-button">Dejar de seguir</button>
+                    </form>
+                    @else
+                    <form action="{{ route('follow', $user) }}" method="POST">
+                        @csrf
+                        <button class="follow-button">Seguir</button>
+                    </form>
+                    @endif
+                </div>
+
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>

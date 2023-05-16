@@ -32,8 +32,18 @@ class InicioController extends Controller
             // Actualizar el contenido de la nota
             $nota->nota = $contenido;
         }
-
         $user = Auth::user();
         return view('dashboard', compact('notas', 'notes', 'user'));
+    }
+
+    public function busqueda(Request $request)
+    {
+        $query = $request->input('query');
+
+        $results = Nota::query()
+            ->where('nota', 'LIKE', '%' . $query . '%')
+            ->get();
+
+        return view('search', ['results' => $results]);
     }
 }

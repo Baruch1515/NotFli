@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
+
 {
     /**
      * Register any application services.
@@ -12,6 +13,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        setlocale(LC_TIME, 'es_ES.utf8');
+
     }
 
     /**
@@ -20,5 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        setlocale(LC_TIME, 'es_ES.utf8');
+
     }
 }

@@ -7,11 +7,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
+use Illuminate\Support\Str;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    public function getRouteKeyName()
+    {
+        return 'name'; // El campo que deseas utilizar en lugar del ID
+    }
 
+    public function setUserNameAttribute($value)
+    {
+        $this->attributes['name'] = Str::slug($value); // Genera el slug a partir del nombre de usuario
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -73,6 +81,7 @@ public function unfollow(User $user)
 {
     $this->follows()->detach($user->id);
 }
+
 
 
 }

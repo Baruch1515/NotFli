@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Nota extends Model
 {
+    protected $fillable = ['nota', 'imagen', 'user_id', 'repost_id'];
+
     use HasFactory;
     public function user()
     {
@@ -17,4 +19,7 @@ class Nota extends Model
         return $this->hasMany(Like::class);
     }    
 
+
+    
+    
 }

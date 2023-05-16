@@ -14,9 +14,15 @@ return new class extends Migration
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
             $table->string('nota');
+            $table->string('imagen')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('repost_id')->nullable(); // Agregar la columna 'repost_id'
+            $table->foreign('repost_id')->references('id')->on('notas')->onDelete('cascade');
             $table->timestamps();
         });
+        
+        
+        
     }
     
 
